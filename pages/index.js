@@ -4,10 +4,10 @@ import { updateUser } from "../actions/userAction";
 class index extends Component {
   constructor(props) {
     super(props);
-    this.onUpdateUser=this.onUpdateUser.bind(this)
+    this.onUpdateUser = this.onUpdateUser.bind(this);
   }
   onUpdateUser() {
-    this.props.dispatch(updateUser("isim değişti"));
+    this.props.onUpdateUser("name changes");
   }
   render() {
     console.log("selam", this.props);
@@ -28,4 +28,7 @@ const mapStateToProps = (state) => {
 //   products: state.products,
 // });
 
-export default connect(mapStateToProps)(index);
+const mapDispatchToProps = {
+  onUpdateUser: updateUser,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(index);
