@@ -1,28 +1,19 @@
 import { List } from "antd";
 import React from "react";
 import Link from "next/link";
-import { fetchUsers } from "../actions/userAction";
-
-const data = [
-  { id: "1", name: "selam" },
-  { id: "2", name: "selam 2" },
-];
-// console.log(fetchUsers)
-class Users extends React.Component {
+class UserComponent extends React.Component {
   render() {
-    const { fetchusers } = this.props;
-console.log(fetchusers)
+    const { users } = this.props;
     return (
       <React.Fragment>
         <List
-          data={data}
           itemLayout="horizontal"
-          dataSource={data}
+          dataSource={users}
           renderItem={(item) => (
             <List.Item>
               <List.Item.Meta
                 title={<Link href={"/user/" + item.id}>{item.name}</Link>}
-                description="sadasd"
+                description={item.email}
               />
             </List.Item>
           )}
@@ -32,4 +23,4 @@ console.log(fetchusers)
   }
 }
 
-export default Users;
+export default UserComponent;
