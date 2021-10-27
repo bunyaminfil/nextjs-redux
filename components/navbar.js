@@ -5,7 +5,11 @@ class Navbar extends React.Component {
   render() {
     return (
       <div>
-        <Link href="/users">Users</Link> <Link href="/forms">Forms</Link>
+        <Link href="/login">Login</Link>
+        <br />
+        <Link href="/users">Users</Link>
+        <br />
+        <Link href="/forms">Forms</Link>
       </div>
     );
   }
